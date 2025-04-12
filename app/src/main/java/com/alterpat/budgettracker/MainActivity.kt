@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var transactionAdapter: TransactionAdapter
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var db: AppDatabase
-// коммит проверка гитхаба
+// Пытаюсь сделать понятный коммит
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

@@ -35,7 +35,8 @@ class TransactionAdapter(private var transactions: List<Transaction>) :
     //transaction — это объект Transaction, соответствующий текущей позиции.
     //Для положительных сумм (amount >= 0) текст форматируется как + $X.XX и окрашивается в зеленый цвет. Для отрицательных сумм текст форматируется как - $X.XX и окрашивается в красный цвет.
     //Поле label обновляется значением из объекта Transaction.
-    //При нажатии на элемент списка создается Intent для перехода в активность DetailedActivity. В Intent передается объект transaction для отображения деталей.
+    //При нажатии на элемент списка создается Intent для перехода в активность DetailedActivity.
+    // В Intent передается объект transaction для отображения деталей.
     override fun onBindViewHolder(holder: TransactionHolder, position: Int) {
         val transaction = transactions[position]
         val context = holder.amount.context

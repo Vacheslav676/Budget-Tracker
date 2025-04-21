@@ -34,8 +34,8 @@ class AddTransactionActivity : AppCompatActivity() {
             else if(amount == null)
                 amountLayout.error = "Please enter a valid amount"
             else {
-                val transaction  =Transaction(0, label, amount, description)
-                insert(transaction)
+                val transaction  =Transaction(0, label, amount, description)// Создание объекта Transaction
+                insert(transaction) // сохранение в базу данных (но не в локальный список)
             }
         }
 
@@ -43,7 +43,7 @@ class AddTransactionActivity : AppCompatActivity() {
             finish()
         }
     }
-
+    // функция сохранения созданного объекта новой странзакции в в базу данных SQLite (а не в локальный список).
     private fun insert(transaction: Transaction){
         val db = Room.databaseBuilder(this,
             AppDatabase::class.java,

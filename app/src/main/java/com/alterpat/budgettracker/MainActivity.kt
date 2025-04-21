@@ -16,12 +16,15 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var deletedTransaction: Transaction
-    private lateinit var transactions : List<Transaction>
+    // объявление переменных, Используется модификатор lateinit,
+    // который позволяет отложить инициализацию переменной до момента её первого использования.
+    // Это полезно, если вы уверены, что переменная будет инициализирована до того, как к ней обратятся.
+    private lateinit var deletedTransaction: Transaction //
+    private lateinit var transactions : List<Transaction> //основной список который отображается в пользовательском интерфейсе
     private lateinit var oldTransactions : List<Transaction>
     private lateinit var transactionAdapter: TransactionAdapter
-    private lateinit var linearLayoutManager: LinearLayoutManager
-    private lateinit var db : AppDatabase
+    private lateinit var linearLayoutManager: LinearLayoutManager // Переменная linearLayoutManager используется для управления размещением элементов в RecyclerView. LinearLayoutManager — это стандартный менеджер размещения, который располагает элементы в виде линейного списка (вертикально или горизонтально).
+    private lateinit var db : AppDatabase // объект базы данных Room
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,10 +70,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun fetchAll(){
+    // Метод fetchAll() вызывается в onResume(), чтобы загрузить все транзакции из базы данных
+    private fun fetchAll(){ //принести всё
         GlobalScope.launch {
-            transactions = db.transactionDao().getAll()
 
+            // db.transactionDao().getAll() выполняет SQL-запрос к базе данных и возвращает список всех
+            transactions = db.transactionDao().getPositiveDescendingNegativeAscending()
+
+            // Затем данные передаются в адаптер RecyclerView через метод transactionAdapter.setData(transactions).
             runOnUiThread {
                 updateDashboard()
                 transactionAdapter.setData(transactions)
@@ -126,7 +133,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
+    // Метод fetchAll() вызывается в onResume(), чтобы загрузить все транзакции из базы данных
     override fun onResume() {
         super.onResume()
         fetchAll()

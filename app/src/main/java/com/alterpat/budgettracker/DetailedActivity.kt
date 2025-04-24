@@ -61,7 +61,7 @@ class DetailedActivity : AppCompatActivity() {
             val amount = amountInput.text.toString().toDoubleOrNull()
 
             if(label.isEmpty())
-                labelLayout.error = "Please neter a valid label"
+                labelLayout.error = "Please enter a valid label"
 
             else if(amount == null)
                 amountLayout.error = "Please enter a valid amount"

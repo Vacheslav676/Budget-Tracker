@@ -37,7 +37,9 @@ class MainActivity : AppCompatActivity() {
 
         db = Room.databaseBuilder(this,
             AppDatabase::class.java,
-            "transactions").build()
+            "transactions")
+            .addMigrations(AppDatabase.MIGRATION_1_2)
+            .build()
 
         recyclerview.apply {
             adapter = transactionAdapter

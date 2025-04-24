@@ -21,7 +21,9 @@ data class Transaction(
     @PrimaryKey(autoGenerate = true) val id: Int,       // @PrimaryKey : Указывает, что это поле является первичным ключом таблицы. autoGenerate = true  Означает, что значения для этого поля будут автоматически генерироваться базой данных (обычно это автоинкремент).
     val label: String,
     val amount: Double,
-    val description: String): Serializable {
+    val description: String,
+    @ColumnInfo(name = "date", defaultValue = "NULL") var date: Long? = null // Новое поле
+): Serializable {
 }
 
 

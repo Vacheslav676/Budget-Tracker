@@ -27,6 +27,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <!-- Label Field -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/labelLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -37,7 +38,6 @@
             android:hint="Label"
             app:boxStrokeWidth="0dp"
             app:errorEnabled="true">
-
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/labelInput"
                 android:layout_width="match_parent"
@@ -48,6 +48,7 @@
                 android:textSize="34sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Amount Field -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/amountLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -58,7 +59,6 @@
             android:hint="Amount"
             app:boxStrokeWidth="0dp"
             app:errorEnabled="true">
-
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/amountInput"
                 android:layout_width="match_parent"
@@ -70,6 +70,7 @@
                 android:textSize="34sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Description Field -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/descriptionLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -80,7 +81,6 @@
             android:hint="Description"
             app:boxStrokeWidth="0dp"
             app:errorEnabled="true">
-
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/descriptionInput"
                 android:layout_width="match_parent"
@@ -90,6 +90,48 @@
                 android:textSize="34sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Date Field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dateLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:hint="Date"
+            app:boxStrokeWidth="0dp"
+            app:errorEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dateInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/calendar_icon"
+                android:drawablePadding="12dp"
+                android:inputType="none"
+                android:focusable="false"
+                android:clickable="true"
+                android:textSize="34sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Article Field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/articleLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:hint="Article"
+            app:boxStrokeWidth="0dp"
+            app:errorEnabled="true">
+            <Spinner
+                android:id="@+id/articleSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/article_options"
+                android:padding="12dp"
+                android:spinnerMode="dropdown" />
+        </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
     <Button

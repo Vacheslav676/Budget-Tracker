@@ -22,7 +22,8 @@ data class Transaction(
     val label: String,
     val amount: Double,
     val description: String,
-    @ColumnInfo(name = "date", defaultValue = "NULL") var date: Long? = null // Новое поле
+    @ColumnInfo(name = "date", defaultValue = "NULL") var date: Long? = null,
+    @ColumnInfo(name = "article", defaultValue = "NULL") var article: Int? = null
 ): Serializable {
 }
 

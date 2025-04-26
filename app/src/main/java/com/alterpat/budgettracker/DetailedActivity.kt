@@ -38,14 +38,12 @@ class DetailedActivity : AppCompatActivity() {
         amountInput.setText(transaction.amount.toString())
         descriptionInput.setText(transaction.description)
 
-        // ???????? точно ли сюда добавлять блок кода?????
-// Инициализация даты
+
+        // Инициализация даты
         transaction.date?.let {
             val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
             dateInput.setText(sdf.format(Date(it)))
         }
-// ???????? точно ли сюда добавлять блок кода?????
-
 
 
         // Настройка выбора даты

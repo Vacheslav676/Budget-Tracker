@@ -129,7 +129,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:entries="@array/article_options"
-                android:padding="12dp"
+                android:padding="16dp"
                 android:spinnerMode="dropdown" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
